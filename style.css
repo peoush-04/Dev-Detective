@@ -4,3 +4,24 @@
     box-sizing: border-box;
     font-family: "Space Mono", monospace;
   }
+
+  .error{
+    display: none;
+  }
+
+  #avatar {
+    width: 70px;
+    border-radius: 90px;
+  }
+
+  .profile-container{
+    display: none;
+  }
+
+  .active{
+    display: flex;
+  }
+
+  .loading{
+    display: none;
+  }
