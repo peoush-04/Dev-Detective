@@ -3,10 +3,19 @@ const searchInputContainer = document.querySelector(".searchbar-container");
 const error = document.querySelector(".error");
 const profileContainer = document.querySelector(".profile-container");
 const loadingScreen = document.querySelector(".loading-container");
+const btnMode=document.querySelector(".btn-mode");
+const textMode=document.querySelector(".mode-text");
+const modeIcon=document.querySelector(".mode-icon");
+//to access the root elements
+const root = document.documentElement.style;
 
+var mode="LIGHT";
+
+// search field  
 searchInputContainer.addEventListener("submit",(e)=>{
     
     e.preventDefault();
+    error.classList.remove("active");
     loadingScreen.classList.remove("active");
     profileContainer.classList.remove("active");
     let input = searchInput.value ;
@@ -79,4 +88,34 @@ function renderUserInfo(data){
 
     // display the profile container
     profileContainer.classList.add("active");
+}
+
+//dark mode
+btnMode.addEventListener("click",()=>{
+    if(mode=="LIGHT")
+        darkMode();
+    else
+        lightMode();
+});
+
+function darkMode(){
+    mode="DARK";
+    textMode.textContent="LIGHT";
+    modeIcon.src = "./assets/images/sun-icon.svg";
+    root.setProperty("--lm-bg", "#141D2F");
+    root.setProperty("--lm-bg-content", "#1E2A47");
+    root.setProperty("--webkitinput","#1E2A47");
+    root.setProperty("--webkitinput-text","white");
+    root.setProperty("--lm-text","white");
+}
+
+function lightMode(){
+    mode="LIGHT";
+    textMode.textContent="DARK";
+    modeIcon.src = "./assets/images/moon-icon.svg";
+    root.setProperty("--lm-bg", "#F6F8FF");
+    root.setProperty("--lm-bg-content", "#FEFEFE");
+    root.setProperty("--webkitinput","#FFFFFF");
+    root.setProperty("--lm-text","#4b6a9b");
+    root.setProperty("--webkitinput","#000");
 }
