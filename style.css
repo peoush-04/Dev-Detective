@@ -1,3 +1,16 @@
+:root {
+  --lm-bg: #f6f8ff;
+  --lm-bg-content: #fefefe;
+  --lm-text: #4b6a9b;
+  --lm-text-alt: #2b3442;
+  --lm-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+  --lm-shadow-inactive: 0px 16px 30px -10px rgba(0, 0, 0, 0.2);
+  --lm-icon-bg: brightness(100%);
+  /* Btn */
+  --btn: #0079ff;
+  --btn-hover: #60abff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +18,98 @@
     font-family: "Space Mono", monospace;
   }
 
+  body{
+    width: 100%;
+    position: relative;
+    height: 100vh;
+  }
+  .wrapper{
+    background-color: var(--lm-bg);
+    font-size: 13px;
+    color: var(--lm-text);
+    width: 100%;
+    position: relative;
+    height: 100vh;
+  }
+
+  .container{
+    width: 740px;
+    margin: 0 auto;
+    padding: 3rem;
+  }
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .btn-mode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    
+  }
+  .btn-mode:hover{
+    cursor: pointer;
+  }
+
+  .searchbar-container{
+    height: 100%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: var(--lm-bg-content);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: var(--lm-shadow);
+    background-image: url(./assets/images/search-icon.svg);
+    background-repeat: no-repeat;
+    background-position-x: 24px;
+    background-position-y: center;
+    background-size: 20px;
+    gap: 10px;
+  }
+
+  #input{
+    all: unset;
+    width: 70%;
+    padding: 6px;
+    color: var(--lm-text);
+    background:none;
+    padding-left: 50px;
+    font-size: 18px;
+  }
+  #input::placeholder{
+    color: var(--lm-text);
+    letter-spacing: -0.5px;
+    font-size: 18px;
+  }
+
+  .btn-search{
+    all: unset;
+    font-size: 18px;
+    cursor:pointer;
+  }
+
+  .loading-container{
+    display: none;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 3rem; 
+  }
+
   .error{
     display: none;
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
   }
 
   #avatar {
@@ -19,9 +122,7 @@
   }
 
   .active{
-    display: flex;
+    display: flex !important;
   }
 
-  .loading{
-    display: none;
-  }
+  

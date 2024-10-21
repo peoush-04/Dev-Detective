@@ -2,18 +2,21 @@ const searchInput = document.querySelector("#input");
 const searchInputContainer = document.querySelector(".searchbar-container");
 const error = document.querySelector(".error");
 const profileContainer = document.querySelector(".profile-container");
-const loading = document.querySelector(".loading");
+const loadingScreen = document.querySelector(".loading-container");
 
 searchInputContainer.addEventListener("submit",(e)=>{
-    // profileContainer.classList.remove
+    
     e.preventDefault();
+    loadingScreen.classList.remove("active");
+    profileContainer.classList.remove("active");
     let input = searchInput.value ;
     if(input=="")
         return;
-    loading.classList.add("active");
+    loadingScreen.classList.add("active");
     fetchUserDetail(input);
 })
 searchInput.addEventListener("input",()=>{
+    loadingScreen.classList.remove("active");
     error.classList.remove("active");
 })
 
@@ -25,10 +28,11 @@ async function fetchUserDetail(input) {
             throw new Error("User not found");
         
         const data = await response.json();
-        loading.classList.remove("active");
+        loadingScreen.classList.remove("active");
         renderUserInfo(data);
     }
     catch(err){
+        loadingScreen.classList.remove("active");
         profileContainer.classList.remove("active");
         error.classList.add("active");
     }
@@ -73,5 +77,6 @@ function renderUserInfo(data){
 
     company.textContent = data.company==null ? "Not available" : data.company;
 
+    // display the profile container
     profileContainer.classList.add("active");
 }
