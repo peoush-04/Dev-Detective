@@ -117,5 +117,5 @@ function lightMode(){
     root.setProperty("--lm-bg-content", "#FEFEFE");
     root.setProperty("--webkitinput","#FFFFFF");
     root.setProperty("--lm-text","#4b6a9b");
-    root.setProperty("--webkitinput","#000");
+    root.setProperty("--webkitinput-text","#000");
 }

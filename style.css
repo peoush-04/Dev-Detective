@@ -29,7 +29,7 @@
   }
   .wrapper{
     background-color: var(--lm-bg);
-    font-size: 13px;
+    font-size: 0.85rem;
     color: var(--lm-text);
     width: 100%;
     position: relative;
@@ -129,7 +129,7 @@
 
 
   #avatar {
-    width: 70px;
+    width: 90px;
     border-radius: 90px;
   }
 
@@ -142,11 +142,56 @@
     padding: 15px;
     box-shadow: var(--lm-shadow);
     flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.9rem;
   }
 
   .profile-header{
     display: flex;
-    
+    /* justify-content: space-between; */
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .profile-info-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  #date{
+    margin-top: 0.4rem;
+  }
+  #user{
+    color: #0079ff;
+  }
+
+  .profile-stats-wrapper{
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-evenly;
+    background-color: var(--lm-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+
+  .profile-stat{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-bottom-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 5rem;
+  }
+
+  .profile-info{
+    display: flex;
+    gap: 1rem;
   }
 
   .active{
