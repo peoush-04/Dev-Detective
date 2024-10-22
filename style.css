@@ -13,6 +13,7 @@
   /* //for input tag , blueish backgrd highlight of the autofilled input in Chrome   */
   --webkitinput:#FFFFFF;
   --webkitinput-text:#000;
+  --webkitinput-border:none;
 }
 
 * {
@@ -25,7 +26,7 @@
   body{
     width: 100%;
     position: relative;
-    height: 100vh;
+    height: 100%;
   }
   .wrapper{
     background-color: var(--lm-bg);
@@ -191,6 +192,8 @@
 
   .profile-info{
     display: flex;
+    justify-content: center;
+    align-items:center ;
     gap: 1rem;
   }
 
@@ -198,4 +201,45 @@
     display: flex !important;
   }
 
+
+@media screen and (max-width:850px) {
+  .container{
+    width: 90%;
+  }
+
+  .profile-info-wrapper{
+    flex-direction:column ;
+  }
+}
+
+@media screen and (max-width:560px) {
+  .container{
+    width: 97%;
+  }
+
+  .profile-info-wrapper{
+    flex-direction:column ;
+  }
+}
   
+@media screen and (max-width:480px) {
+  .container{
+    padding: 1.2rem;
+  }
+  .wrapper{
+    font-size: 12px;
+  }
+  #input{
+    font-size: 14px;
+  }
+  #input::placeholder{
+    font-size: 14px;
+  }
+  .btn-search{
+    font-size: 13px;
+  }
+  .profile-container{
+    padding: 0.9rem;
+  }
+
+}
